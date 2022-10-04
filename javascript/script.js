@@ -12,7 +12,7 @@ console.log(document.querySelector('.guess').value);
 */
 
 let secretNumber = Math.trunc(Math.random() * 500) + 1;
-let score = 20;
+let score = 10;
 let highscore = 0;
 let lowerBound = 0;
 let upperBound = 500;
@@ -31,7 +31,7 @@ document.querySelector('.check').addEventListener('click', function () {
     alert(`You must enter a number between ${lowerBound} and ${upperBound}`);
 
     secretNumber = Math.trunc(Math.random() * 500) + 1;
-    score = 20;
+    score = 10;
     highscore = 0;
     lowerBound = 0;
     upperBound = 500;
@@ -109,7 +109,7 @@ document.querySelector('.check').addEventListener('click', function () {
 });
 
 document.querySelector('.again').addEventListener('click', function () {
-  score = 20;
+  score = 10;
   lowerBound = 0;
   upperBound = 500;
   secretNumber = Math.trunc(Math.random() * 500) + 1;
