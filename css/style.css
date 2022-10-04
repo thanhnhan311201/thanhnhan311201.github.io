@@ -117,3 +117,57 @@ h1 {
 .label-score {
   margin-bottom: 2rem;
 }
+
+/* Popup message */
+.popup_message {
+  width: 480px;
+  background: #222;
+  border: 5px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0, 1);
+  text-align: center;
+  pad: 0 30px 30px;
+  color: #fff;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open_popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup_message img {
+  width: 120px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup_message h2 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 10px;
+}
+
+.popup_message p {
+  text-align: center;
+}
+
+.popup_message button {
+  width: 50%;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding: 10px 0;
+  background: #fff;
+  font-family: inherit;
+  color: #222;
+  border: 0;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}

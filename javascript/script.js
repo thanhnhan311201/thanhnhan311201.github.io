@@ -23,23 +23,21 @@ const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
 
+const popupMessage = function (message) {
+  document.querySelector('.popup_mssg_desc').textContent = message;
+};
+
+let popup = document.querySelector('.popup_message');
+
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
   if (guess < lowerBound || guess > upperBound) {
-    alert(`You must enter a number between ${lowerBound} and ${upperBound}`);
+    popup.classList.add('open_popup');
 
-    secretNumber = Math.trunc(Math.random() * 500) + 1;
-    score = 10;
-    highscore = 0;
-    lowerBound = 0;
-    upperBound = 500;
-    console.log(secretNumber);
-
-    displayMessage('Start guessing...');
-    document.querySelector('.score').textContent = score;
-    document.querySelector('.guess').value = '';
+    let popup_mssg = `You must enter a number between ${lowerBound} and ${upperBound}!`;
+    popupMessage(popup_mssg);
   } else {
     // When there is no input
     if (!guess) {
@@ -123,6 +121,21 @@ document.querySelector('.again').addEventListener('click', function () {
 
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
+});
+
+document.querySelector('.stupid_again').addEventListener('click', function () {
+  popup.classList.remove('open_popup');
+
+  score = 10;
+  lowerBound = 0;
+  upperBound = 500;
+  secretNumber = Math.trunc(Math.random() * 500) + 1;
+  console.log(secretNumber);
+
+  // document.querySelector('.message').textContent = 'Start guessing...';
+  displayMessage('Start guessing...');
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.guess').value = '';
 });
 
 ///////////////////////////////////////

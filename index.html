@@ -11,13 +11,13 @@
     <header>
       <h1>Guess My Number!</h1>
       <p class="between">(Between 0 and 500)</p>
-      <button class="btn again">Again!</button>
+      <button id="disabled_again" class="btn again">Again!</button>
       <div class="number">?</div>
     </header>
     <main>
       <section class="left">
         <input type="number" class="guess" />
-        <button class="btn check">Check!</button>
+        <button id="disabled_check" class="btn check">Check!</button>
       </section>
       <section class="right">
         <p class="message">Start guessing...</p>
@@ -29,6 +29,12 @@
         </p>
       </section>
     </main>
+    <div class="popup_message">
+      <img src="images/angry-icon.png" alt="" />
+      <h2>Stupid</h2>
+      <p class="popup_mssg_desc">You must enter a right number!</p>
+      <button class="stupid_again">Play again!</button>
+    </div>
     <script src="javascript/script.js"></script>
   </body>
 </html>
