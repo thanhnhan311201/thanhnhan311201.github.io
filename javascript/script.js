@@ -66,6 +66,8 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('body').style.backgroundColor = '#60b347';
       document.querySelector('.number').style.width = '30rem';
 
+      disabledButton('disabled_check');
+
       if (score > highscore) {
         highscore = score;
         document.querySelector('.highscore').textContent = highscore;
@@ -88,6 +90,9 @@ document.querySelector('.check').addEventListener('click', function () {
       } else {
         // document.querySelector('.message').textContent = '💥 You lost the game!';
         displayMessage('💥 You lost the game!');
+
+        disabledButton('disabled_check');
+
         document.querySelector('.score').textContent = 0;
       }
     }
@@ -134,6 +139,8 @@ document.querySelector('.again').addEventListener('click', function () {
 
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
+
+  enableButton('disabled_check');
 });
 
 document.querySelector('.stupid_again').addEventListener('click', function () {
