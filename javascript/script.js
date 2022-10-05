@@ -27,6 +27,16 @@ const popupMessage = function (message) {
   document.querySelector('.popup_mssg_desc').textContent = message;
 };
 
+const disabledButton = function (idName) {
+  document.getElementById(idName).disabled = true;
+  document.getElementById(idName).style.backgroundColor = '#ccc';
+};
+
+const enableButton = function (idName) {
+  document.getElementById(idName).disabled = false;
+  document.getElementById(idName).style.backgroundColor = '#eee';
+};
+
 let popup = document.querySelector('.popup_message');
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -35,6 +45,9 @@ document.querySelector('.check').addEventListener('click', function () {
 
   if (guess < lowerBound || guess > upperBound) {
     popup.classList.add('open_popup');
+
+    disabledButton('disabled_check');
+    disabledButton('disabled_again');
 
     let popup_mssg = `You must enter a number between ${lowerBound} and ${upperBound}!`;
     popupMessage(popup_mssg);
@@ -125,6 +138,9 @@ document.querySelector('.again').addEventListener('click', function () {
 
 document.querySelector('.stupid_again').addEventListener('click', function () {
   popup.classList.remove('open_popup');
+
+  enableButton('disabled_check');
+  enableButton('disabled_again');
 
   score = 10;
   lowerBound = 0;
