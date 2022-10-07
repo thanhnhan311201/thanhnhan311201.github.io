@@ -17,6 +17,8 @@ let highscore = 0;
 let lowerBound = 0;
 let upperBound = 500;
 
+let popup = document.querySelector('.popup_message');
+
 console.log(secretNumber);
 
 const displayMessage = function (message) {
@@ -37,9 +39,7 @@ const enableButton = function (idName) {
   document.getElementById(idName).style.backgroundColor = '#eee';
 };
 
-let popup = document.querySelector('.popup_message');
-
-document.querySelector('.check').addEventListener('click', function () {
+const checkNumber = function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
@@ -89,7 +89,9 @@ document.querySelector('.check').addEventListener('click', function () {
         document.querySelector('.score').textContent = score;
       } else {
         // document.querySelector('.message').textContent = '💥 You lost the game!';
-        displayMessage('💥 You lost the game!');
+        displayMessage(
+          `💥 You lost the game! The correct number is ${secretNumber}.`
+        );
 
         disabledButton('disabled_check');
 
@@ -122,7 +124,19 @@ document.querySelector('.check').addEventListener('click', function () {
     //   }
     // }
   }
+};
+
+document.querySelector('.check').addEventListener('click', function () {
+  checkNumber();
 });
+
+document
+  .getElementById('guessNumber')
+  .addEventListener('keypress', function (e) {
+    if (e.keyCode === 13) {
+      checkNumber();
+    }
+  });
 
 document.querySelector('.again').addEventListener('click', function () {
   score = 10;

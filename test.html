@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/test.css" />
+    <title>Guess My Number!</title>
+  </head>
+  <body>
+    <header>
+      <h1>Play Game!</h1>
+    </header>
+    <main>
+      <section class="left">
+        <button class="guessNumber"></button>
+      </section>
+      <section class="right">
+        <button class="detectBomb"></button>
+        <input type="number" id="input_test" />
+      </section>
+    </main>
+    <script>
+      document
+        .getElementById('input_test')
+        .addEventListener('keypress', function (e) {
+          if (e.keyCode === 13) {
+            alert(`${document.getElementById('input_test').value}`);
+          }
+        });
+    </script>
+  </body>
+</html>
