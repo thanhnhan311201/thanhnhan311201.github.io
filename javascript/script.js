@@ -15,7 +15,7 @@ let secretNumber = Math.trunc(Math.random() * 500) + 1;
 let score = 10;
 let highscore = 0;
 let lowerBound = 0;
-let upperBound = 500;
+let upperBound = 1000;
 
 let popup = document.querySelector('.popup_message');
 
@@ -41,7 +41,6 @@ const enableButton = function (idName) {
 
 const checkNumber = function () {
   const guess = Number(document.querySelector('.guess').value);
-  console.log(guess, typeof guess);
 
   if (guess < lowerBound || guess > upperBound) {
     popup.classList.add('open_popup');
@@ -70,7 +69,7 @@ const checkNumber = function () {
 
       if (score > highscore) {
         highscore = score;
-        document.querySelector('.highscore').textContent = highscore;
+        // document.querySelector('.highscore').textContent = highscore;
       }
 
       // When guess is wrong
@@ -85,8 +84,8 @@ const checkNumber = function () {
           lowerBound = guess;
           displayMessage(`Between ${lowerBound} and ${upperBound}`);
         }
-        score--;
-        document.querySelector('.score').textContent = score;
+        // score--;
+        // document.querySelector('.score').textContent = score;
       } else {
         // document.querySelector('.message').textContent = '💥 You lost the game!';
         displayMessage(
@@ -95,7 +94,7 @@ const checkNumber = function () {
 
         disabledButton('disabled_check');
 
-        document.querySelector('.score').textContent = 0;
+        // document.querySelector('.score').textContent = 0;
       }
     }
 
@@ -141,13 +140,13 @@ document
 document.querySelector('.again').addEventListener('click', function () {
   score = 10;
   lowerBound = 0;
-  upperBound = 500;
+  upperBound = 1000;
   secretNumber = Math.trunc(Math.random() * 500) + 1;
   console.log(secretNumber);
 
   // document.querySelector('.message').textContent = 'Start guessing...';
   displayMessage('Start guessing...');
-  document.querySelector('.score').textContent = score;
+  // document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
 
@@ -165,13 +164,13 @@ document.querySelector('.stupid_again').addEventListener('click', function () {
 
   score = 10;
   lowerBound = 0;
-  upperBound = 500;
+  upperBound = 1000;
   secretNumber = Math.trunc(Math.random() * 500) + 1;
   console.log(secretNumber);
 
   // document.querySelector('.message').textContent = 'Start guessing...';
   displayMessage('Start guessing...');
-  document.querySelector('.score').textContent = score;
+  // document.querySelector('.score').textContent = score;
   document.querySelector('.guess').value = '';
 });
 
