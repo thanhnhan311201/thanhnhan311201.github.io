@@ -1062,6 +1062,27 @@
         background-position: 0px 200px, 0 200px, 0px 200px, 0px 200px;
       }
     }
+
+    @media only screen and (max-width: 768px) {
+      .window {
+        width: 300px;
+        height: 300px;
+        top: 40%;
+      }
+
+      .message {
+        margin-top: 0;
+      }
+
+      .message h1 {
+        font-size: 40px;
+      }
+
+      .message h2 {
+        font-size: 16px;
+        white-space: normal;
+      }
+    }
   </style>
 
   <body
@@ -1146,7 +1167,6 @@
         </div>
       </div>
     </div>
-    <script></script>
 
     <audio class="music" loop>
       <source src="./last-christmas.mp3" type="audio/mpeg" />
@@ -1157,37 +1177,26 @@
         document.querySelector('#btn').style.display = 'none';
         document.querySelector('.christmas').style.display = 'block';
         document.querySelector('#body').style.background = '#de2f32';
+
         document.querySelector('.music').play();
       };
-
-      document.getElementById('btn').addEventListener('click', () => {
-        // const music = document.createElement("embed");
-        // music.src = "./last-christmas.mp3";
-        // music.hidden = "true";
-        // music.loop = "true";
-        // music.type = "audio/x-wav";
-        // music.autostart = "true";
-        // document.body.appendChild(music);
-      });
 
       window.snowStormConfigs = {
         snowColor: '#fff', //Thay đổi màu sắc của bông tuyết tại đây
         snowCharacter: '&bull;', //Thay đổi hình dạng của bông tuyết tại đây
       };
       setTimeout(function () {
-        (function (d, s, id) {
-          var js,
-            fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s);
-          js.id = id;
-          js.src =
-            'http://static.pep.vn/library/pepvn/blog-xtraffic/effects/snow-effect/main.min.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        })(document, 'script', 'blog-xtraffic-snow-effect');
+        let js,
+          fjs = document.getElementsByTagName('script')[0];
+
+        if (document.getElementById('blog-xtraffic-snow-effect')) return;
+
+        js = document.createElement('script');
+        js.id = 'blog-xtraffic-snow-effect';
+        js.src =
+          'http://static.pep.vn/library/pepvn/blog-xtraffic/effects/snow-effect/main.min.js';
+        fjs.parentNode.insertBefore(js, fjs);
       }, 200);
     </script>
-
-    <script type="text/javascript" language="javascript"></script>
   </body>
 </html>
