@@ -15,7 +15,7 @@ let secretNumber = Math.trunc(Math.random() * 500) + 1;
 let score = 10;
 let highscore = 0;
 let lowerBound = 0;
-let upperBound = 1000;
+let upperBound = 500;
 
 let popup = document.querySelector('.popup_message');
 
@@ -84,17 +84,18 @@ const checkNumber = function () {
           lowerBound = guess;
           displayMessage(`Between ${lowerBound} and ${upperBound}`);
         }
-        // score--;
-        // document.querySelector('.score').textContent = score;
+        score--;
+        document.querySelector('.score').textContent = score;
       } else {
-        // document.querySelector('.message').textContent = '💥 You lost the game!';
+        document.querySelector('.message').textContent =
+          '💥 You lost the game!';
         displayMessage(
           `💥 You lost the game! The correct number is ${secretNumber}.`
         );
 
         disabledButton('disabled_check');
 
-        // document.querySelector('.score').textContent = 0;
+        document.querySelector('.score').textContent = 0;
       }
     }
 
@@ -144,9 +145,9 @@ document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 500) + 1;
   console.log(secretNumber);
 
-  // document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.message').textContent = 'Start guessing...';
   displayMessage('Start guessing...');
-  // document.querySelector('.score').textContent = score;
+  document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
 
@@ -168,9 +169,9 @@ document.querySelector('.stupid_again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 500) + 1;
   console.log(secretNumber);
 
-  // document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.message').textContent = 'Start guessing...';
   displayMessage('Start guessing...');
-  // document.querySelector('.score').textContent = score;
+  document.querySelector('.score').textContent = score;
   document.querySelector('.guess').value = '';
 });
 

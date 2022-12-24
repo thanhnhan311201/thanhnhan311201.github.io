@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Guess My Number!</title>
+  </head>
+  <body>
+    <header>
+      <h1>Guess My Number!</h1>
+      <p class="between">(Between 0 and 500)</p>
+      <button id="disabled_again" class="btn again">Again!</button>
+      <div class="number">?</div>
+    </header>
+    <main>
+      <section class="left">
+        <input id="guessNumber" type="number" class="guess" />
+        <button id="disabled_check" class="btn check">Check!</button>
+      </section>
+      <section class="right">
+        <p class="message">Start guessing...</p>
+        <p class="label-score">
+          🎰 Number of turns: <span class="score">10</span>
+        </p>
+        <p class="label-highscore">
+          🥇 Highscore: <span class="highscore">0</span>
+        </p>
+      </section>
+    </main>
+    <div class="popup_message">
+      <img src="images/angry-icon.png" alt="" />
+      <h2>Stupid</h2>
+      <p class="popup_mssg_desc"></p>
+      <button class="stupid_again">Play again!</button>
+    </div>
+    <script src="javascript/script.js"></script>
+  </body>
+</html>
