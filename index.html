@@ -1185,6 +1185,7 @@
         snowColor: '#fff', //Thay đổi màu sắc của bông tuyết tại đây
         snowCharacter: '&bull;', //Thay đổi hình dạng của bông tuyết tại đây
       };
+
       setTimeout(function () {
         let js,
           fjs = document.getElementsByTagName('script')[0];
@@ -1193,8 +1194,7 @@
 
         js = document.createElement('script');
         js.id = 'blog-xtraffic-snow-effect';
-        js.src =
-          'http://static.pep.vn/library/pepvn/blog-xtraffic/effects/snow-effect/main.min.js';
+        js.src = './snow-effect.js';
         fjs.parentNode.insertBefore(js, fjs);
       }, 200);
     </script>
