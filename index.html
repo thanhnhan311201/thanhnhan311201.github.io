@@ -1073,7 +1073,7 @@
       height: 100vh;
     "
   >
-    <div id="btn" style="width: 30%">
+    <div id="btn" style="width: 30%; cursor: pointer">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1143,18 +1143,43 @@
         document.querySelector("#body").style.background = "#de2f32";
       };
     </script>
+
+    <script type="text/javascript" language="javascript">
+      window.snowStormConfigs = {
+        snowColor: "#fff", //Thay đổi màu sắc của bông tuyết tại đây
+        snowCharacter: "&bull;", //Thay đổi hình dạng của bông tuyết tại đây
+      };
+      setTimeout(function () {
+        (function (d, s, id) {
+          var js,
+            fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src =
+            "http://static.pep.vn/library/pepvn/blog-xtraffic/effects/snow-effect/main.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        })(document, "script", "blog-xtraffic-snow-effect");
+      }, 200);
+    </script>
+
+    <audio class="music" loop>
+      <source src="./last-christmas.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      document.getElementById("btn").addEventListener("click", () => {
+        // const music = document.createElement("embed");
+        // music.src = "./last-christmas.mp3";
+        // music.hidden = "true";
+        // music.loop = "true";
+        // music.type = "audio/x-wav";
+        // music.autostart = "true";
+
+        // document.body.appendChild(music);
+
+        document.querySelector(".music").play();
+      });
+    </script>
   </body>
-
-  <script>
-    document.getElementById("btn").addEventListener("click", () => {
-      const music = document.createElement("embed");
-      music.src = "./last-christmas.mp3";
-      music.hidden = "true";
-      music.loop = "true";
-      music.type = "audio/x-wav";
-      music.autostart = "true";
-
-      document.body.appendChild(music);
-    });
-  </script>
 </html>
