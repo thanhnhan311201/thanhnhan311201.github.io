@@ -64,7 +64,7 @@
     }
 
     .santa .body:before {
-      content: " ";
+      content: ' ';
       width: 7px;
       height: 7px;
       background: #f7be10;
@@ -135,7 +135,7 @@
     }
 
     .santa .head .face .redhat .redpart:before {
-      content: " ";
+      content: ' ';
       width: 95px;
       height: 95px;
       position: absolute;
@@ -146,7 +146,7 @@
     }
 
     .santa .head .face .redhat .redpart:after {
-      content: " ";
+      content: ' ';
       position: absolute;
       right: 0;
       top: 60px;
@@ -180,7 +180,7 @@
 
     .santa .head .face .eyes:before,
     .santa .head .face .eyes:after {
-      content: " ";
+      content: ' ';
       position: absolute;
       width: 15px;
       height: 9px;
@@ -221,7 +221,7 @@
 
     .santa .head .face .beard:before,
     .santa .head .face .beard:after {
-      content: " ";
+      content: ' ';
       width: 80px;
       height: 80px;
       background: #f8e7dc;
@@ -279,7 +279,7 @@
 
     .santa .head .ears:before,
     .santa .head .ears:after {
-      content: " ";
+      content: ' ';
       width: 20px;
       height: 30px;
       border-radius: 50%;
@@ -308,12 +308,12 @@
     }
 
     @font-face {
-      font-family: "Mountains of Christmas";
+      font-family: 'Mountains of Christmas';
       font-style: normal;
-      src: local("Mountains of Christmas"),
-        local("MountainsofChristmas-Regular"),
+      src: local('Mountains of Christmas'),
+        local('MountainsofChristmas-Regular'),
         url(https://fonts.gstatic.com/s/mountainsofchristmas/v8/dVGBFPwd6G44IWDbQtPewylJhLDHyIrT3I5b5eGTHmw.woff2)
-          format("woff2");
+          format('woff2');
     }
 
     .message {
@@ -327,7 +327,7 @@
       -o-transform: translateX(-50%);
       transform: translateX(-50%);
       color: #f8e7dc;
-      font-family: "Mountains of Christmas";
+      font-family: 'Mountains of Christmas';
     }
 
     .message h1 {
@@ -1032,7 +1032,7 @@
     }
 
     .christmas:before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -1112,8 +1112,18 @@
     </div>
 
     <div class="christmas">
-      <div class="message">
+      <div class="message" style="text-align: center">
         <h1>Merry Christmas!</h1>
+        <h2>
+          Giáng sinh là một điều cần thiết. Phải có ít nhất một ngày trong năm
+          để nhắc nhở chúng ta rằng chúng ta đang ở đây vì một điều gì khác
+          ngoài chính chúng ta. Đó chính là sự quan tâm, yêu thương dành cho
+          người khác.
+        </h2>
+        <h2>
+          Giáng sinh của bạn có thể lấp lánh với những khoảnh khắc của tình yêu
+          và tiếng cười. Chúc một mùa Giáng sinh tràn ngập yêu thương!
+        </h2>
       </div>
       <div class="window">
         <div class="santa">
@@ -1136,18 +1146,33 @@
         </div>
       </div>
     </div>
-    <script>
-      document.querySelector("#btn").onclick = function () {
-        document.querySelector("#btn").style.display = "none";
-        document.querySelector(".christmas").style.display = "block";
-        document.querySelector("#body").style.background = "#de2f32";
-      };
-    </script>
+    <script></script>
+
+    <audio class="music" loop>
+      <source src="./last-christmas.mp3" type="audio/mpeg" />
+    </audio>
 
     <script type="text/javascript" language="javascript">
+      document.querySelector('#btn').onclick = function () {
+        document.querySelector('#btn').style.display = 'none';
+        document.querySelector('.christmas').style.display = 'block';
+        document.querySelector('#body').style.background = '#de2f32';
+        document.querySelector('.music').play();
+      };
+
+      document.getElementById('btn').addEventListener('click', () => {
+        // const music = document.createElement("embed");
+        // music.src = "./last-christmas.mp3";
+        // music.hidden = "true";
+        // music.loop = "true";
+        // music.type = "audio/x-wav";
+        // music.autostart = "true";
+        // document.body.appendChild(music);
+      });
+
       window.snowStormConfigs = {
-        snowColor: "#fff", //Thay đổi màu sắc của bông tuyết tại đây
-        snowCharacter: "&bull;", //Thay đổi hình dạng của bông tuyết tại đây
+        snowColor: '#fff', //Thay đổi màu sắc của bông tuyết tại đây
+        snowCharacter: '&bull;', //Thay đổi hình dạng của bông tuyết tại đây
       };
       setTimeout(function () {
         (function (d, s, id) {
@@ -1157,29 +1182,12 @@
           js = d.createElement(s);
           js.id = id;
           js.src =
-            "http://static.pep.vn/library/pepvn/blog-xtraffic/effects/snow-effect/main.min.js";
+            'http://static.pep.vn/library/pepvn/blog-xtraffic/effects/snow-effect/main.min.js';
           fjs.parentNode.insertBefore(js, fjs);
-        })(document, "script", "blog-xtraffic-snow-effect");
+        })(document, 'script', 'blog-xtraffic-snow-effect');
       }, 200);
     </script>
 
-    <audio class="music" loop>
-      <source src="./last-christmas.mp3" type="audio/mpeg" />
-    </audio>
-
-    <script>
-      document.getElementById("btn").addEventListener("click", () => {
-        // const music = document.createElement("embed");
-        // music.src = "./last-christmas.mp3";
-        // music.hidden = "true";
-        // music.loop = "true";
-        // music.type = "audio/x-wav";
-        // music.autostart = "true";
-
-        // document.body.appendChild(music);
-
-        document.querySelector(".music").play();
-      });
-    </script>
+    <script type="text/javascript" language="javascript"></script>
   </body>
 </html>
